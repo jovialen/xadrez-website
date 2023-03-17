@@ -3,5 +3,5 @@
 }
 
 .active-route {
-  @apply text-white bg-blue-700 md:bg-transparent md:text-blue-700;
+  @apply text-white bg-blue-700 hover:bg-blue-700 md:hover:bg-transparent md:bg-transparent md:text-blue-700;
 }

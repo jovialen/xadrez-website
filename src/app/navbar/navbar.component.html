@@ -12,8 +12,9 @@
     <div class="flex md:order-2">
       <button
         type="button"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
+        class="flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
       >
+        <fa-icon [icon]="faGithubAlt" class="mr-2 text-base"></fa-icon>
         <a href="https://github.com/jovialen/xadrez" target="_blank"
           >On GitHub</a
         >
@@ -21,6 +22,9 @@
       <button
         type="button"
         class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        (click)="toggleNavbar()"
+        aria-controls="navbar-links"
+        aria-expanded="false"
       >
         <span class="sr-only">Open main menu</span>
         <svg
@@ -39,7 +43,8 @@
       </button>
     </div>
     <div
-      class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+      class="items-center justify-between w-full md:flex md:w-auto md:order-1"
+      [class.hidden]="navbarActive"
       id="navbar-links"
     >
       <ul

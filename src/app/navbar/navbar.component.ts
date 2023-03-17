@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 
 import { faChessKnight } from "@fortawesome/free-solid-svg-icons";
+import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
 
 @Component({
   selector: "app-navbar",
@@ -9,4 +10,11 @@ import { faChessKnight } from "@fortawesome/free-solid-svg-icons";
 })
 export class NavbarComponent {
   faChessKnight = faChessKnight;
+  faGithubAlt = faGithubAlt;
+
+  navbarActive: boolean = false;
+
+  toggleNavbar() {
+    this.navbarActive = !this.navbarActive;
+  }
 }
