@@ -6,11 +6,19 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { PlayPageComponent } from './play-page/play-page.component';
+import { AnalyzePageComponent } from './analyze-page/analyze-page.component';
+import { NotationPageComponent } from './notation-page/notation-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    HomePageComponent,
+    PlayPageComponent,
+    AnalyzePageComponent,
+    NotationPageComponent,
   ],
   imports: [
     BrowserModule,
