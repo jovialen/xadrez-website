@@ -1,1 +1,23 @@
-<p>home-page works!</p>
+<div class="container mx-auto px-4 md:px-0">
+  <div class="grid grid-cols-3 md:grid-cols-7">
+    <div class="col-span-3 flex flex-col space-y-4">
+      <h1 class="text-4xl md:text-5xl font-bold">
+        Hi, my name is <span class="text-blue-700">Xadrez</span>
+      </h1>
+      <p class="text-xl">Do you want to play some chess with me?</p>
+      <div class="flex space-x-1">
+        <button type="button" class="primary-btn">
+          <fa-icon [icon]="faChessRook" class="mr-2 text-base"></fa-icon>
+          <a routerLink="/play">Challange me</a>
+        </button>
+        <button type="button" class="flex normal-btn">
+          <fa-icon [icon]="faBrain" class="mr-2 text-base"></fa-icon>
+          <a routerLink="/analyze">See how I think</a>
+        </button>
+      </div>
+    </div>
+    <div class="col-span-3 md:col-span-4">
+      <p>Placeholder</p>
+    </div>
+  </div>
+</div>
