@@ -1,6 +1,10 @@
 import { Component } from "@angular/core";
 
-import { faChessKnight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChessKnight,
+  faXmark,
+  faBarsStaggered,
+} from "@fortawesome/free-solid-svg-icons";
 import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
 
 @Component({
@@ -11,6 +15,8 @@ import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
 export class NavbarComponent {
   faChessKnight = faChessKnight;
   faGithubAlt = faGithubAlt;
+  faXmark = faXmark;
+  faBarsStaggered = faBarsStaggered;
 
   navbarActive: boolean = false;
 
