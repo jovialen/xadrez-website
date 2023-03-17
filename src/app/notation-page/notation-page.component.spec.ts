@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { NotationPageComponent } from './notation-page.component';
+import { NotationPageComponent } from "./notation-page.component";
 
-describe('NotationPageComponent', () => {
+describe("NotationPageComponent", () => {
   let component: NotationPageComponent;
   let fixture: ComponentFixture<NotationPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NotationPageComponent ]
-    })
-    .compileComponents();
+      declarations: [NotationPageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NotationPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
