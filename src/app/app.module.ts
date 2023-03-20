@@ -10,6 +10,7 @@ import { HomePageComponent } from "./home-page/home-page.component";
 import { PlayPageComponent } from "./play-page/play-page.component";
 import { AnalyzePageComponent } from "./analyze-page/analyze-page.component";
 import { NotationPageComponent } from "./notation-page/notation-page.component";
+import { ChessboardComponent } from './chessboard/chessboard.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NotationPageComponent } from "./notation-page/notation-page.component";
     PlayPageComponent,
     AnalyzePageComponent,
     NotationPageComponent,
+    ChessboardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],

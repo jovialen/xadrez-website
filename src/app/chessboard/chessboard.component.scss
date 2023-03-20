@@ -1,0 +1,33 @@
+.square.white {
+  color: #b58863;
+  background-color: #f0d9b5;
+}
+
+.square.black {
+  color: #f0d9b5;
+  background-color: #b58863;
+}
+
+.square {
+  position: relative;
+}
+
+.square:hover {
+  box-shadow: inset 2px 2px 1px 0 #FFD700, inset -2px -2px 1px 0 #FFD700;
+}
+
+.row-label {
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+}
+
+.col-label {
+  position: absolute;
+  bottom: 0.125rem;
+  right: 0.125rem;
+}
+
+.row-label:hover, .col-label:hover {
+  cursor: default;
+}

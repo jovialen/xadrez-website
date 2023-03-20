@@ -1,0 +1,24 @@
+<div class="w-full aspect-square flex flex-col rounded-lg overflow-hidden">
+  <div
+    *ngFor="let row of [0, 1, 2, 3, 4, 5, 6, 7]"
+    class="flex grow">
+    <div
+      *ngFor="let col of [0, 1, 2, 3, 4, 5, 6, 7]"
+      id="square-{{(row * 8) + col}}"
+      class="grow square"
+      [class.white]="(col + row) % 2 === 0"
+      [class.black]="(col + row) % 2 !== 0">
+      <span 
+        *ngIf="col === 0"
+        class="row-label select-none">
+        {{row}}
+      </span>
+
+      <span
+        *ngIf="row === 7"
+        class="col-label select-none">
+        {{['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'][col]}}
+      </span>
+    </div>
+  </div>
+</div>
