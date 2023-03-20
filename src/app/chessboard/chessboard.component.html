@@ -19,6 +19,15 @@
         class="col-label select-none">
         {{['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'][col]}}
       </span>
+
+      <div *ngIf="!isEmpty(row, col)">
+        <fa-icon *ngIf="isPawn(row, col)" [icon]="faPawn" class="piece" [class.white]="isWhite(row, col)"></fa-icon>
+        <fa-icon *ngIf="isRook(row, col)" [icon]="faRook" class="piece" [class.white]="isWhite(row, col)"></fa-icon>
+        <fa-icon *ngIf="isKnight(row, col)" [icon]="faKnight" class="piece" [class.white]="isWhite(row, col)"></fa-icon>
+        <fa-icon *ngIf="isBishop(row, col)" [icon]="faBishop" class="piece" [class.white]="isWhite(row, col)"></fa-icon>
+        <fa-icon *ngIf="isQueen(row, col)" [icon]="faQueen" class="piece" [class.white]="isWhite(row, col)"></fa-icon>
+        <fa-icon *ngIf="isKing(row, col)" [icon]="faKing" class="piece" [class.white]="isWhite(row, col)"></fa-icon>
+      </div>
     </div>
   </div>
 </div>

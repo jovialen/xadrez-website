@@ -16,6 +16,19 @@
   box-shadow: inset 2px 2px 1px 0 #FFD700, inset -2px -2px 1px 0 #FFD700;
 }
 
+.piece {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: black;
+}
+
+.piece.white {
+  color: white;
+}
+
 .row-label {
   position: absolute;
   top: 0.125rem;
