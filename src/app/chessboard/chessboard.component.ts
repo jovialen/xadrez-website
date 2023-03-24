@@ -20,7 +20,7 @@ export class ChessboardComponent implements AfterViewInit {
       selector: `chessboard-${this.id}`,
       config: {
         position: "start",
-        draggable: true,
+        draggable: false,
       }
     });
   }
