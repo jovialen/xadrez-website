@@ -27,6 +27,8 @@
 
 	return max;
 }`;
+
+	const usage_code = `console.log('Todo!')`;
 </script>
 
 <section>
@@ -52,7 +54,9 @@
 		<div slot="header">What am I?</div>
 		<div slot="info">
 			I am a chess engine. That means that I can find all legal moves on a chessboard, evaluate how
-			good positions on the board are, and find what I think are the best moves.
+			good positions on the board are, and find what I think are the best moves. You can play against
+			me here in the browser, or have me help you with a game by seeing how I think. You can even
+			use me in your own projects!
 		</div>
 		<div slot="compliment" class='w-full max-w-sm md:w-96'>
 			<Chessboard fen="start" />
@@ -74,6 +78,20 @@
 		</div>
 		<div slot="compliment" class='w-full overflow-hidden rounded-lg md:w-auto md:min-w-[24rem]'>
 			<Highlight language={javascript} code={negamax_pseudocode} />
+		</div>
+	</InfoSection>
+</section>
+
+<section class="px-4 md:px-2 py-4">
+	<InfoSection>
+		<div slot="header">How can you use me?</div>
+		<div slot="info">
+			To use me yourself, go to my GitHub repository, download me, and add me to your project. You can see an example
+			on how to use me in code <span class='hidden md:inline'>to the right</span>
+			<span class='inline md:hidden'>below</span>
+		</div>
+		<div slot="compliment" class='w-full overflow-hidden rounded-lg md:w-auto md:min-w-[24rem]'>
+			<Highlight language={javascript} code={usage_code} />
 		</div>
 	</InfoSection>
 </section>
