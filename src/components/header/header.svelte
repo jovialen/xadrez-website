@@ -13,7 +13,7 @@
 	}
 </script>
 
-<header class="container mx-auto bg-white flex flex-wrap justify-between px-2 sm:px-4 py-2.5">
+<header class="container mx-auto bg-white flex flex-wrap justify-between px-2 sm:px-4 py-2.5 relative">
 	<div class="place-self-center">
 		<a href="/" class="flex">
 			<Icon icon="fa-chess-knight" size="text-3xl sm:text-4xl" color="text-blue-700" />
