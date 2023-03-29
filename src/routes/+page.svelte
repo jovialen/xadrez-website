@@ -1,22 +1,79 @@
 <script>
+	import Highlight from 'svelte-highlight/Highlight.svelte';
+	import javascript from 'svelte-highlight/languages/javascript';
+	import "svelte-highlight/styles/github-dark-dimmed.css";
+
 	import SecondaryIconButton from '../components/button/secondary-icon.svelte';
+	import Chessboard from '../components/chessboard/chessboard.svelte';
 	import Hero from '../components/hero.svelte';
+	import InfoSection from './info-section.svelte';
+
+	const negamax_pseudocode = `function negaMax(chessboard, depth) {
+	if (depth === 0) {
+		return evaluate(chessboard);
+	}
+
+	let max = -Infinity;
+	let moves = findLegalMoves(chessboard);
+	for (move in moves) {
+		makeMove(chessboard, move);
+		let score = -negaMax(chessboard, depth - 1);
+		undoMove(chessboard, move);
+
+		if (score > max) {
+			max = score;
+		}
+	}
+
+	return max;
+}`;
 </script>
 
 <section>
 	<Hero>
-		<div class="text-white text-center space-y-4">
+		<div class="text-white text-center space-y-4 px-4 md:px-2">
 			<h1 class="text-6xl">XADREZ</h1>
 			<p>A slightly better chess player than its creator.</p>
 		</div>
 	</Hero>
 </section>
 
-<section class="my-2">
-	<div class="container mx-auto flex justify-center gap-2 items-center">
+<section class="my-2 px-4 md:px-2">
+	<div class="container mx-auto flex flex-col md:flex-row justify-center gap-2 items-center">
 		<a href="/play"><SecondaryIconButton icon="fa-chess">Challange me</SecondaryIconButton></a>
 		or
 		<a href="/analyze"><SecondaryIconButton icon="fa-brain">See how I think</SecondaryIconButton></a
 		>
 	</div>
+</section>
+
+<section class="px-4 md:px-2">
+	<InfoSection>
+		<div slot="header">What am I?</div>
+		<div slot="info">
+			I am a chess engine. That means that I can find all legal moves on a chessboard, evaluate how
+			good positions on the board are, and find what I think are the best moves.
+		</div>
+		<div slot="compliment" class='w-full max-w-sm md:w-96'>
+			<Chessboard fen="start" />
+		</div>
+	</InfoSection>
+</section>
+
+<section class="px-4 md:px-2">
+	<InfoSection reverse={true}>
+		<div slot="header">How do I work?</div>
+		<div slot="info">
+			I find the best moves by using an algorithm called <b>negamax alpha-beta search</b>. By making every possible
+			move from the current position, I can evaluate all the positions one move into the future, and find the best one.
+			Then, I make every possible move after the first one, and find the best possible position two
+			moves into the future. I continue to do this, looking as far into the future as I can, and
+			find out what move I need to make to get to the best position for me. Sounds complicated? The
+			code <span class="hidden md:inline">to the left</span>
+			<span class="inline md:hidden">below</span> is all the code for it!
+		</div>
+		<div slot="compliment" class='w-full overflow-hidden rounded-lg md:w-auto md:min-w-[24rem]'>
+			<Highlight language={javascript} code={negamax_pseudocode} />
+		</div>
+	</InfoSection>
 </section>
