@@ -1,7 +1,7 @@
 <script>
 	import Highlight from 'svelte-highlight/Highlight.svelte';
 	import javascript from 'svelte-highlight/languages/javascript';
-	import "svelte-highlight/styles/github-dark-dimmed.css";
+	import 'svelte-highlight/styles/github-dark-dimmed.css';
 
 	import SecondaryIconButton from '../components/button/secondary-icon.svelte';
 	import Chessboard from '../components/chessboard/chessboard.svelte';
@@ -54,11 +54,11 @@
 		<div slot="header">What am I?</div>
 		<div slot="info">
 			I am a chess engine. That means that I can find all legal moves on a chessboard, evaluate how
-			good positions on the board are, and find what I think are the best moves. You can play against
-			me here in the browser, or have me help you with a game by seeing how I think. You can even
-			use me in your own projects!
+			good positions on the board are, and find what I think are the best moves. You can play
+			against me here in the browser, or have me help you with a game by seeing how I think. You can
+			even use me in your own projects!
 		</div>
-		<div slot="compliment" class='w-full max-w-sm md:w-96'>
+		<div slot="compliment" class="w-full max-w-sm md:w-96">
 			<Chessboard fen="start" />
 		</div>
 	</InfoSection>
@@ -68,15 +68,16 @@
 	<InfoSection reverse={true}>
 		<div slot="header">How do I work?</div>
 		<div slot="info">
-			I find the best moves by using an algorithm called <b>negamax alpha-beta search</b>. By making every possible
-			move from the current position, I can evaluate all the positions one move into the future, and find the best one.
-			Then, I make every possible move after the first one, and find the best possible position two
-			moves into the future. I continue to do this, looking as far into the future as I can, and
-			find out what move I need to make to get to the best position for me. Sounds complicated? The
-			code <span class="hidden md:inline">to the left</span>
+			I find the best moves by using an algorithm called <b>negamax alpha-beta search</b>. By making
+			every possible move from the current position, I can evaluate all the positions one move into
+			the future, and find the best one. Then, I make every possible move after the first one, and
+			find the best possible position two moves into the future. I continue to do this, looking as
+			far into the future as I can, and find out what move I need to make to get to the best
+			position for me. Sounds complicated? The code
+			<span class="hidden md:inline">to the left</span>
 			<span class="inline md:hidden">below</span> is all the code for it!
 		</div>
-		<div slot="compliment" class='w-full overflow-hidden rounded-lg md:w-auto md:min-w-[24rem]'>
+		<div slot="compliment" class="w-full overflow-hidden rounded-lg md:w-auto md:min-w-[24rem]">
 			<Highlight language={javascript} code={negamax_pseudocode} />
 		</div>
 	</InfoSection>
@@ -86,11 +87,11 @@
 	<InfoSection>
 		<div slot="header">How can you use me?</div>
 		<div slot="info">
-			To use me yourself, go to my GitHub repository, download me, and add me to your project. You can see an example
-			on how to use me in code <span class='hidden md:inline'>to the right</span>
-			<span class='inline md:hidden'>below</span>
+			To use me yourself, go to my GitHub repository, download me, and add me to your project. You
+			can see an example on how to use me in code <span class="hidden md:inline">to the right</span>
+			<span class="inline md:hidden">below</span>
 		</div>
-		<div slot="compliment" class='w-full overflow-hidden rounded-lg md:w-auto md:min-w-[24rem]'>
+		<div slot="compliment" class="w-full overflow-hidden rounded-lg md:w-auto md:min-w-[24rem]">
 			<Highlight language={javascript} code={usage_code} />
 		</div>
 	</InfoSection>
