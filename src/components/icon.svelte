@@ -8,4 +8,4 @@
 	export let color = 'text-inherit';
 </script>
 
-<i class='{origin} {icon} {size} {color}' />
+<i class="{origin} {icon} {size} {color}" />
