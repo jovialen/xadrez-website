@@ -4,8 +4,8 @@
 
 	export let icon = '';
 	export let origin = 'fa-solid';
-	export let size = 'text-base';
+	export let size = '';
+	export let color = 'text-inherit';
 </script>
 
-<i class='{origin} {icon} {size}' />
-
+<i class='{origin} {icon} {size} {color}' />
