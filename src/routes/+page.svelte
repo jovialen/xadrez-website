@@ -1,4 +1,6 @@
 <script>
+	import { base } from '$app/paths';
+
 	import Highlight from 'svelte-highlight/Highlight.svelte';
 	import javascript from 'svelte-highlight/languages/javascript';
 	import 'svelte-highlight/styles/github-dark-dimmed.css';
@@ -42,9 +44,9 @@
 
 <section class="my-2 px-4 md:px-2">
 	<div class="container mx-auto flex flex-col md:flex-row justify-center gap-2 items-center">
-		<a href="/play"><SecondaryIconButton icon="fa-chess">Challange me</SecondaryIconButton></a>
+		<a href="{base}/play"><SecondaryIconButton icon="fa-chess">Challange me</SecondaryIconButton></a>
 		or
-		<a href="/analyze"><SecondaryIconButton icon="fa-brain">See how I think</SecondaryIconButton></a
+		<a href="{base}/analyze"><SecondaryIconButton icon="fa-brain">See how I think</SecondaryIconButton></a
 		>
 	</div>
 </section>
