@@ -6,15 +6,25 @@
 	import IntLink from '../internal-link.svelte';
 	import PrimaryIconButton from '../button/primary-icon.svelte';
 	import SecondaryIconButton from '../button/secondary-icon.svelte';
+	import { clickOutside } from '../../click-outside.js';
 
 	let show_navbar = false;
+	let transitioning = false;
 
 	function toggleNavbar() {
-		show_navbar = !show_navbar;
+		if (!transitioning) {
+			show_navbar = !show_navbar;
+		}
 	}
 
 	function hideNavbar() {
 		show_navbar = false;
+	}
+
+	function handleClickOutside() {
+		if (!transitioning) {
+			hideNavbar();
+		}
 	}
 </script>
 
@@ -22,7 +32,7 @@
 	class="container mx-auto bg-white flex flex-wrap justify-between px-2 sm:px-4 py-2.5 relative"
 >
 	<div class="place-self-center">
-		<IntLink href="/" class="flex" on:click={hideNavbar}>
+		<IntLink href="/" class="flex">
 			<Icon icon="fa-chess-knight" size="text-3xl sm:text-4xl" color="text-blue-700" />
 			<h1 class="ml-2 text-xl font-semibold">Xadrez</h1>
 		</IntLink>
@@ -40,7 +50,12 @@
 			class="place-self-center w-full md:w-auto md:order-1 md:block"
 			class:hidden={!show_navbar}
 			transition:slide
+			on:introstart={() => transitioning= true}
+			on:outrostart={() => transitioning = true}
+			on:introend={() => transitioning= false}
+			on:outroend={() => transitioning = false}
 			on:click={hideNavbar}
+			use:clickOutside={handleClickOutside}
 		>
 			<Navbar />
 		</div>
