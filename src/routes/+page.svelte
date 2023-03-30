@@ -1,14 +1,13 @@
 <script>
-	import { base } from '$app/paths';
-
 	import Highlight from 'svelte-highlight/Highlight.svelte';
 	import javascript from 'svelte-highlight/languages/javascript';
 	import 'svelte-highlight/styles/github-dark-dimmed.css';
 
+	import IntLink from '../components/internal-link.svelte';
 	import SecondaryIconButton from '../components/button/secondary-icon.svelte';
 	import Chessboard from '../components/chessboard/chessboard.svelte';
-	import Hero from '../components/hero.svelte';
-	import InfoSection from './info-section.svelte';
+	import Hero from '../components/sections/hero.svelte';
+	import InfoSection from '../components/sections/info-section.svelte';
 
 	const negamax_pseudocode = `function negaMax(chessboard, depth) {
 	if (depth === 0) {
@@ -44,12 +43,9 @@
 
 <section class="my-2 px-4 md:px-2">
 	<div class="container mx-auto flex flex-col md:flex-row justify-center gap-2 items-center">
-		<a href="{base}/play"><SecondaryIconButton icon="fa-chess">Challange me</SecondaryIconButton></a
-		>
+		<IntLink href="/play"><SecondaryIconButton icon="fa-chess">Challange me</SecondaryIconButton></IntLink>
 		or
-		<a href="{base}/analyze"
-			><SecondaryIconButton icon="fa-brain">See how I think</SecondaryIconButton></a
-		>
+		<IntLink href="/analyze"><SecondaryIconButton icon="fa-brain">See how I think</SecondaryIconButton></IntLink>
 	</div>
 </section>
 

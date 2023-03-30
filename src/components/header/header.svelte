@@ -1,9 +1,9 @@
 <script>
-	import { base } from '$app/paths';
 	import { slide } from 'svelte/transition';
 
 	import Navbar from './navbar.svelte';
 	import Icon from '../icon.svelte';
+	import IntLink from '../internal-link.svelte';
 	import PrimaryIconButton from '../button/primary-icon.svelte';
 	import SecondaryIconButton from '../button/secondary-icon.svelte';
 
@@ -22,10 +22,10 @@
 	class="container mx-auto bg-white flex flex-wrap justify-between px-2 sm:px-4 py-2.5 relative"
 >
 	<div class="place-self-center">
-		<a href="{base}/" class="flex" on:click={hideNavbar}>
+		<IntLink href="/" class="flex" on:click={hideNavbar}>
 			<Icon icon="fa-chess-knight" size="text-3xl sm:text-4xl" color="text-blue-700" />
 			<h1 class="ml-2 text-xl font-semibold">Xadrez</h1>
-		</a>
+		</IntLink>
 	</div>
 	<div class="place-self-center flex md:order-2">
 		<a href="https://github.com/jovialen/xadrez" target="_blank">
