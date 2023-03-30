@@ -1,38 +1,40 @@
-# create-svelte
+# [Xadrez website](https://jovialen.github.io/xadrez-website)
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Xadrez is a website for playing chess online against my
+[Xadrez Chess Engine](https://github.com/jovialen/xadrez).
+It is built using the Svelte framework.
 
-## Creating a project
+## Installation
 
-If you're seeing this, you've probably already done this step. Congrats!
+To install and run Xadrez, follow these steps:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- Clone the Xadrez-website repository to your local machine.
+- Navigate to the project directory in your terminal.
+- Run `npm install` to install the project's dependencies.
+- Run `npm run dev` to start the development server.
+- Open your web browser and navigate to `http://localhost:5000` to access the Xadrez website.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Features
 
-## Developing
+Xadrez includes the following features:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- Play chess online against AI.
+- Customize your game board and pieces.
+- Evaluate and analyze positions.
 
-```bash
-npm run dev
+## Deploy
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+To deploy the website with GitHub Pages, follow these steps:
 
-## Building
+- Install the website to your local machine with the steps from the [installation](#installation)
+- Setup the GitHub repository to host from.
+- Set the repository as the `origin` remote.
+- Run `npm run build` to build the static production files.
+- Run `npm run preview` to preview the production website.
+- Run `npm run deploy` to deploy the website to GitHub Pages.
+- Make sure that GitHub pages is configured and that you are building from the `gh-pages` branch.
+- Navigate to `https://[your-name-here].github.io/[repo-name]` after a few minutes.
 
-To create a production version of your app:
+## License
 
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Xadrez is licensed under the Apache v2.0 license. See the LICENSE file for details.
