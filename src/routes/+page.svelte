@@ -3,11 +3,14 @@
 	import javascript from 'svelte-highlight/languages/javascript';
 	import 'svelte-highlight/styles/github-dark-dimmed.css';
 
+	import { title } from '../stores.js';
 	import IntLink from '../components/internal-link.svelte';
 	import SecondaryIconButton from '../components/button/secondary-icon.svelte';
 	import Chessboard from '../components/chessboard/chessboard.svelte';
 	import Hero from '../components/sections/hero.svelte';
 	import InfoSection from '../components/sections/info-section.svelte';
+
+	title.empty();
 
 	const negamax_pseudocode = `function negaMax(chessboard, depth) {
 	if (depth === 0) {
@@ -59,7 +62,7 @@
 			even use me in your own projects!
 		</div>
 		<div slot="compliment" class="w-full max-w-sm md:w-96">
-			<Chessboard fen="start" />
+			<Chessboard position="start" draggable={false} />
 		</div>
 	</InfoSection>
 </section>

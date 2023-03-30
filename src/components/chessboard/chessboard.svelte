@@ -6,15 +6,17 @@
 
 	import newUniqueId from 'locally-unique-id-generator';
 
-	export let fen;
+	import "./extra.css";
+
+	export let position = 'start';
+	export let draggable = false;
 
 	let id = newUniqueId();
-	let board;
 
 	onMount(() => {
-		board = Chessboard(id, {
-			position: fen,
-			draggable: false
+		Chessboard(id, {
+			position,
+			draggable,
 		});
 	});
 
