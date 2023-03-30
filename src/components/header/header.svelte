@@ -50,10 +50,10 @@
 			class="place-self-center w-full md:w-auto md:order-1 md:block"
 			class:hidden={!show_navbar}
 			transition:slide
-			on:introstart={() => transitioning= true}
-			on:outrostart={() => transitioning = true}
-			on:introend={() => transitioning= false}
-			on:outroend={() => transitioning = false}
+			on:introstart={() => (transitioning = true)}
+			on:outrostart={() => (transitioning = true)}
+			on:introend={() => (transitioning = false)}
+			on:outroend={() => (transitioning = false)}
 			on:click={hideNavbar}
 			use:clickOutside={handleClickOutside}
 		>

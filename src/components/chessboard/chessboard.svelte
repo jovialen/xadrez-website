@@ -6,7 +6,7 @@
 
 	import newUniqueId from 'locally-unique-id-generator';
 
-	import "./extra.css";
+	import './extra.css';
 
 	export let position = 'start';
 	export let draggable = false;
@@ -16,7 +16,7 @@
 	onMount(() => {
 		Chessboard(id, {
 			position,
-			draggable,
+			draggable
 		});
 	});
 

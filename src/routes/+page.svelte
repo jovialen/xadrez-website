@@ -46,9 +46,13 @@
 
 <section class="my-2 px-4 md:px-2">
 	<div class="container mx-auto flex flex-col md:flex-row justify-center gap-2 items-center">
-		<IntLink href="/play"><SecondaryIconButton icon="fa-chess">Challange me</SecondaryIconButton></IntLink>
+		<IntLink href="/play"
+			><SecondaryIconButton icon="fa-chess">Challange me</SecondaryIconButton></IntLink
+		>
 		or
-		<IntLink href="/analyze"><SecondaryIconButton icon="fa-brain">See how I think</SecondaryIconButton></IntLink>
+		<IntLink href="/analyze"
+			><SecondaryIconButton icon="fa-brain">See how I think</SecondaryIconButton></IntLink
+		>
 	</div>
 </section>
 
