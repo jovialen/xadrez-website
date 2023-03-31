@@ -1,36 +1,27 @@
 <script>
 	import TabView from '../tabs/tab-view.svelte';
-	import Notation from '../../routes/notation/+page.svelte';
+	import ChessGameTab from './chess-game-tab.svelte';
+	import ChessSettingsTab from './chess-settings-tab.svelte';
+	import ChessAnalysisTab from './chess-analysis-tab.svelte';
 
 	export let analyze = false;
 
-	const all_tabs = [
-		{
-			label: 'Settings',
-			content: Notation
-		},
-		{
-			label: 'Analyze',
-			content: Notation
-		}
-	];
-
 	let tabs = [];
 	tabs.push({
-		label: 'Game',
-		content: Notation
-	});
+			label: 'Game',
+			content: ChessGameTab,
+		});
 	tabs.push({
-		label: 'Settings',
-		content: Notation
-	});
+			label: 'Settings',
+			content: ChessSettingsTab,
+		});
 
 	if (analyze) {
 		tabs.push({
 			label: 'Analyze',
-			content: Notation
+			content: ChessAnalysisTab,
 		});
 	}
 </script>
 
-<TabView {tabs} />
+<TabView tabs={tabs} />
