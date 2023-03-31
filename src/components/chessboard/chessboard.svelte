@@ -11,10 +11,11 @@
 	export let position = 'start';
 	export let draggable = false;
 
+	let board;
 	let id = newUniqueId();
 
 	onMount(() => {
-		Chessboard(id, {
+		board = Chessboard(id, {
 			position,
 			draggable
 		});
