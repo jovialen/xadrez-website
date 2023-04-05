@@ -66,7 +66,7 @@
 			even use me in your own projects!
 		</div>
 		<div slot="compliment" class="w-full max-w-sm md:w-96">
-			<Chessboard position="start" draggable={false} />
+			<Chessboard draggable={false} />
 		</div>
 	</InfoSection>
 </section>

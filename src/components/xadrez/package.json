@@ -1,0 +1,19 @@
+{
+  "name": "xadrez",
+  "description": "A chess engine written in Rust.",
+  "version": "0.1.0",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jovialen/xadrez"
+  },
+  "files": [
+    "xadrez_bg.wasm",
+    "xadrez.js",
+    "xadrez_bg.js",
+    "xadrez.d.ts"
+  ],
+  "module": "xadrez.js",
+  "types": "xadrez.d.ts",
+  "sideEffects": false
+}

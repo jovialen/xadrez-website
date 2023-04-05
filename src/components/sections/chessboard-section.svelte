@@ -9,7 +9,7 @@
 	<div class='flex flex-wrap md:flex-nowrap gap-4 justify-center'>
 		<div class='w-full md:w-auto md:min-w-[50%] max-h-[80vh]'>
 			<div class='h-full aspect-square mx-auto'>
-				<Chessboard position="start" draggable={true} />
+				<Chessboard draggable={true} />
 			</div>
 		</div>
 		<div class='w-full md:w-auto md:grow md:max-w-lg'>
