@@ -1,7 +1,7 @@
 <script>
 	import { onMount, createEventDispatcher } from 'svelte';
 
-	import { Chessboard } from '@discape/chessboardjs';
+	import { Chessboard, objToFen } from '@discape/chessboardjs';
 	import { startpos } from '../xadrez/xadrez.js';
 	import newUniqueId from 'locally-unique-id-generator';
 
@@ -42,7 +42,8 @@
 			},
 			onChange: (oldpos, newpos) => {
 				dispatch('change', {
-					oldpos, newpos
+					oldpos: objToFen(oldpos),
+					newpos: objToFen(newpos)
 				});
 			}
 		});
