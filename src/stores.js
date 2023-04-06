@@ -12,15 +12,20 @@ function titleStore() {
 	};
 }
 
-export function chessStore() {
+export function positionStore() {
 	const position = writable(Xadrez.startpos());
 
 	return {
 		subscribe: position.subscribe,
-		set: position.set,
+		set: (newpos) => {
+			position.set(newpos);
+		},
 		startpos: () => {
-			this.history = [];
 			position.set(Xadrez.startpos());
+		},
+		is_startpos: () => {
+			let pos = get(position);
+			return pos === Xadrez.startpos();
 		},
 		make_move: (from, to) => {
 			let oldpos = get(position);
@@ -48,4 +53,3 @@ export function chessStore() {
 }
 
 export const title = titleStore();
-export const chess = chessStore();

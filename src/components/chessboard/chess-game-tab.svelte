@@ -4,14 +4,13 @@
 	import ChatBubble from '../chat-bubble.svelte';
 	import IconButton from '../button/icon-button.svelte';
 
-	// let text = "I want to play some chess! Do you want to play with me?";
-	let text = "";
+	export let message = "";
 </script>
 
-<div class='body w-full h-full flex flex-col gap-4' on:click={() => text = "Hello, World!"}>
-	{#if text !== ""}
+<div class='body w-full h-full flex flex-col gap-4'>
+	{#if message !== ""}
 		<div class='min-h-fit w-full' transition:slide|local>
-			<ChatBubble {text} user_icon="fa-laptop" />
+			<ChatBubble {message} user_icon="fa-laptop" />
 		</div>
 		<div class='divider' transition:slide|local />
 	{/if}

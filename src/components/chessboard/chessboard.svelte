@@ -1,62 +1,54 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, createEventDispatcher } from 'svelte';
 
 	import { Chessboard } from '@discape/chessboardjs';
-	import '../../../node_modules/@discape/chessboardjs/dist/build/chessboard.min.css';
-	import { chess } from '../../stores.js';
-
+	import { startpos } from '../xadrez/xadrez.js';
 	import newUniqueId from 'locally-unique-id-generator';
 
 	import './extra.css';
+	import '../../../node_modules/@discape/chessboardjs/dist/build/chessboard.min.css';
 
+	export let position = startpos();
 	export let draggable = false;
+	export let sparePieces = false;
+	export let dropOffBoard = 'snapback';
+	export let movable = (piece, orientation) => { return true };
+	export let onDrop = (from, to) => {};
+
+	const dispatch = createEventDispatcher();
 
 	let board = undefined;
 	let id = newUniqueId();
 
-	onMount(() => {
-		board = Chessboard(id, {
-			$chess,
-			draggable,
-			onDragStart: (_, piece) => {
-				if (chess.game_state() !== "Playing") {
-					return false;
-				}
-
-				let side_to_move = chess.side_to_move();
-				if ((side_to_move === 'w' && piece.search(/^b/) !== -1) ||
-					  (side_to_move === 'b' && piece.search(/^w/) !== -1)) {
-					return false;
-				}
-			},
-			onDrop: (from, to) => {
-				if (from === to) {
-					return;
-				}
-			
-				if (!chess.make_move(from, to)) {
-					return 'snapback';
-				}
-			},
-			onChange: (oldpos, newpos) => {
-				let moves = chess.legal_moves();
-				console.log(moves);
-			}
-		});
-	});
-
-	$: {
-		if (board !== undefined) {
-			console.log("Updating position")
-			board.position($chess);
-		}
+	function update() {
+		board.position(position);
 	}
 	
 	function handleResize() {
 		board.resize();
 	}
+	
+	onMount(() => {
+		board = Chessboard(id, {
+			position,
+			draggable,
+			sparePieces,
+			onDragStart: (_, piece, __, orientation) => movable(piece, orientation),
+			onDrop,
+			dropOffBoard,
+			onSnapEnd: () => {
+				dispatch('snapend');
+				update();
+			},
+			onChange: (oldpos, newpos) => {
+				dispatch('change', {
+					oldpos, newpos
+				});
+			}
+		});
+	});
 </script>
 
 <svelte:window on:resize={handleResize} />
 
-<div {id} />
+<div {id} class={sparePieces ? 'h-4/5 aspect-square mx-auto' : 'h-full'} />

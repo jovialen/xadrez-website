@@ -2,7 +2,7 @@
 	import Icon from './icon.svelte';
 
 	export let user_icon = "fa-user";
-	export let text = "";
+	export let message = "";
 </script>
 
 <div class='flex gap-2 w-full'>
@@ -10,7 +10,7 @@
 		<Icon icon={user_icon} size="text-xl" color="text-white" />
 	</div>
 	<div class='max-w-full p-1 px-4 border border-gray-300 rounded-lg rounded-bl-none'>
-		<span>{text}</span>
+		<span>{message}</span>
 	</div>
 </div>
 

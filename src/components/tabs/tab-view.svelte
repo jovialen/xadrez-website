@@ -19,6 +19,6 @@
 		{/each}
 	</ul>
 	<div class="rounded-b-lg border border-gray-300 border-t-0 p-4 grow">
-		<svelte:component this={tabs[activeTab].content} />
+		<svelte:component this={tabs[activeTab].content} {...tabs[activeTab].props} />
 	</div>
 </div>
