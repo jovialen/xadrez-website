@@ -9,11 +9,13 @@
 	title.page('Play');
 
 	let position = positionStore();
+	let orientation = writable("white");
+	let message = writable("");
 	let tabs = [
 		{
 			label: 'Game',
 			content: ChessGameTab,
-			props: { message: '' },
+			props: { message, position, orientation },
 		},
 		{
 			label: 'Settings',
@@ -42,7 +44,13 @@
 			return 'snapback';
 		}
 
-		tabs[0].props.message = from + to;
+		message.set(from + to);
+	}
+
+	function handleChange() {
+		if ($orientation[0] !== position.side_to_move()) {
+			message.set("Thinking of a move now");
+		}
 	}
 
 	$: {
@@ -50,4 +58,6 @@
 	}
 </script>
 
-<ChessboardSection position={$position} {movable} {onDrop} {tabs} />
+{#key $orientation}
+	<ChessboardSection position={position} orientation={$orientation} {movable} {onDrop} {tabs} on:change={handleChange} />
+{/key}

@@ -20,6 +20,9 @@ export function positionStore() {
 		set: (newpos) => {
 			position.set(newpos);
 		},
+		reset: () => {
+			position.set(Xadrez.startpos());
+		},
 		startpos: () => {
 			position.set(Xadrez.startpos());
 		},

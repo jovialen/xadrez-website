@@ -1,5 +1,6 @@
 <script>
 	import { onMount, createEventDispatcher } from 'svelte';
+	import { writable } from 'svelte/store';
 
 	import { Chessboard, objToFen } from '@discape/chessboardjs';
 	import { startpos } from '../xadrez/xadrez.js';
@@ -8,8 +9,9 @@
 	import './extra.css';
 	import '../../../node_modules/@discape/chessboardjs/dist/build/chessboard.min.css';
 
-	export let position = startpos();
+	export let position = writable(startpos());
 	export let draggable = false;
+	export let orientation = "white";
 	export let sparePieces = false;
 	export let dropOffBoard = 'snapback';
 	export let movable = (piece, orientation) => { return true };
@@ -20,25 +22,22 @@
 	let board = undefined;
 	let id = newUniqueId();
 
-	function update() {
-		board.position(position);
-	}
-	
 	function handleResize() {
 		board.resize();
 	}
 	
 	onMount(() => {
 		board = Chessboard(id, {
-			position,
+			position: $position,
 			draggable,
 			sparePieces,
+			orientation,
 			onDragStart: (_, piece, __, orientation) => movable(piece, orientation),
 			onDrop,
 			dropOffBoard,
 			onSnapEnd: () => {
 				dispatch('snapend');
-				update();
+				board.position($position);
 			},
 			onChange: (oldpos, newpos) => {
 				dispatch('change', {
@@ -48,6 +47,12 @@
 			}
 		});
 	});
+
+	$: {
+		if (board) {
+			board.position($position);
+		}
+	}
 </script>
 
 <svelte:window on:resize={handleResize} />

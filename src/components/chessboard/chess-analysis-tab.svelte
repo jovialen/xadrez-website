@@ -1,22 +1,23 @@
 <script>
   import { writable } from 'svelte/store';
 
+  import Slider from '../slider.svelte';
+
   export let evaluation = writable(0);
 </script>
 
 <div>
-  <label for="evaluation" class="block mb-2 text-sm font-medium text-gray-900">
+  <Slider min={-20} max={20} value={$evaluation} enabled={false}>
     Evaluation
-    <span class:white-lead={$evaluation > 0} class:black-lead={$evaluation <= 0} class='px-2 rounded-lg'>
+  	<span class:white-lead={$evaluation > 0} class:black-lead={$evaluation <= 0} class='px-2 rounded-lg'>
       {#if $evaluation > 0}
         +
       {:else}
         -
       {/if}
-      {Math.abs($evaluation).toFixed(2)}
+  	  {Math.abs($evaluation).toFixed(2)}
     </span>
-  </label>
-  <input id="evaluation" type="range" min="-20" max="20" value={$evaluation} class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" disabled>
+  </Slider>
 </div>
 
 <style>

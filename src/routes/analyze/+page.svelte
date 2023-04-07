@@ -1,4 +1,5 @@
 <script>
+	import { writable } from 'svelte/store';
 	import { tweened } from 'svelte/motion';
 	import { cubicOut } from 'svelte/easing';
 	
@@ -7,21 +8,20 @@
 	import * as Xadrez from '../../components/xadrez/xadrez.js';
 	import { title } from '../../stores.js';
 
-	let position = Xadrez.startpos();
+	let position = writable(Xadrez.startpos());
 	let tabs = [
 		{
 			label: 'Analyze',
 			content: ChessAnalysisTab,
 			props: {
-				evaluation: tweened(Xadrez.evaluate(position), { duration: 200, easing: cubicOut }),
+				evaluation: tweened(Xadrez.evaluate($position), { duration: 200, easing: cubicOut }),
 			}
 		}
 	];
 
 	function onChange(e) {
-		position = `${e.detail.newpos} w - - 0 1`;
-		console.log(position);
-		tabs[0].props.evaluation.set(Xadrez.evaluate(position));
+		position.set(`${e.detail.newpos} w - - 0 1`);
+		tabs[0].props.evaluation.set(Xadrez.evaluate($position));
 	}
 
 	title.page('Analyze');
