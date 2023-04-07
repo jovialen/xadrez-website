@@ -212,14 +212,15 @@ export function startpos() {
 /**
 * @param {string} fen
 * @param {string} m
+* @param {string} promotion
 * @returns {any}
 */
-export function make_move(fen, m) {
+export function make_move(fen, m, promotion) {
     const ptr0 = passStringToWasm0(fen, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
     const len0 = WASM_VECTOR_LEN;
     const ptr1 = passStringToWasm0(m, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
     const len1 = WASM_VECTOR_LEN;
-    const ret = wasm.make_move(ptr0, len0, ptr1, len1);
+    const ret = wasm.make_move(ptr0, len0, ptr1, len1, promotion.codePointAt(0));
     return takeObject(ret);
 }
 

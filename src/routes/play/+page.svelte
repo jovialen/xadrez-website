@@ -8,7 +8,7 @@
 
 	title.page('Play');
 
-	let position = positionStore();
+	let position = positionStore("k7/7P/8/8/8/8/8/7K w - - 0 1");
 	let orientation = writable("white");
 	let message = writable("");
 	let tabs = [
@@ -53,6 +53,11 @@
 
 	function handleChange() {
 		if ($orientation[0] !== position.side_to_move()) {
+			if (position.game_state() !== "Playing") {
+				message.set(position.game_state());
+				return;
+			}
+		
 			message.set("Thinking of a move now");
 			position.search(3000).then(m => {
 				position.make_move(m);

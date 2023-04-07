@@ -13,8 +13,8 @@ function titleStore() {
 	};
 }
 
-export function positionStore() {
-	const position = writable(Xadrez.startpos());
+export function positionStore(startpos = Xadrez.startpos()) {
+	const position = writable(startpos);
 
 	return {
 		subscribe: position.subscribe,
@@ -33,7 +33,7 @@ export function positionStore() {
 		},
 		make_move: (from, to = "") => {
 			let oldpos = get(position);
-			let newpos = Xadrez.make_move(oldpos, from + to);
+			let newpos = Xadrez.make_move(oldpos, from + to, "q");
 			if (newpos === null) {
 				console.log(from + to + " is an illegal move");
 				return false;

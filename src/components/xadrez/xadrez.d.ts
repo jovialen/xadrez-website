@@ -10,9 +10,10 @@ export function startpos(): any;
 /**
 * @param {string} fen
 * @param {string} m
+* @param {string} promotion
 * @returns {any}
 */
-export function make_move(fen: string, m: string): any;
+export function make_move(fen: string, m: string, promotion: string): any;
 /**
 * @param {string} fen
 * @param {any} from

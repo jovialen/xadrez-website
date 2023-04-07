@@ -3,6 +3,7 @@
 
 	import ChatBubble from '../chat-bubble.svelte';
 	import IconButton from '../button/icon-button.svelte';
+	import PrimaryIconButton from '../button/primary-icon.svelte';
 	import SecondaryIconButton from '../button/secondary-icon.svelte';
 
 	export let position;
@@ -58,7 +59,15 @@
 				{/if}
 				<SecondaryIconButton icon='fa-lightbulb' on:click={help}>Help me</SecondaryIconButton>
 				{#if !position.is_startpos()}
-					<SecondaryIconButton icon='fa-flag' on:click={resign}>Resign</SecondaryIconButton>
+					{#if position.game_state() === "Playing"}
+						<SecondaryIconButton icon='fa-flag' on:click={resign}>
+							Resign
+						</SecondaryIconButton>
+					{:else}
+						<PrimaryIconButton icon='fa-chess-board' on:click={resign}>
+							New Game
+						</PrimaryIconButton>
+					{/if}
 				{/if}
 			{/key}
 		</div>

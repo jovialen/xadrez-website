@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 export const memory: WebAssembly.Memory;
-export function make_move(a: number, b: number, c: number, d: number): number;
+export function make_move(a: number, b: number, c: number, d: number, e: number): number;
 export function legal_moves(a: number, b: number, c: number, d: number, e: number): void;
 export function side_to_move(a: number, b: number): number;
 export function evaluate(a: number, b: number): number;
