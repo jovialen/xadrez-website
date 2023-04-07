@@ -9,11 +9,13 @@
 	<title>{$title}</title>
 </svelte:head>
 
-<Header />
-<slot />
+<div class="flex flex-col min-h-full">
+	<Header />
+	<slot />
+</div>
 
 <style>
 	:global(html, body) {
-		height: 100%;
+		height: 100vh;
 	}
 </style>

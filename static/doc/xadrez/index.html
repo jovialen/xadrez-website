@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Xadrez"><meta name="keywords" content="rust, rustlang, rust-lang, xadrez"><title>xadrez - Rust</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../normalize.css"><link rel="stylesheet" href="../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../ayu.css" disabled><link rel="stylesheet" href="../dark.css" disabled><link rel="stylesheet" href="../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../storage.js"></script><script defer src="../crates.js"></script><script defer src="../main.js"></script><noscript><link rel="stylesheet" href="../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../favicon.svg"></head><body class="rustdoc mod crate"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../xadrez/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div></a><h2></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../xadrez/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div></a><h2 class="location"><a href="#">Crate xadrez</a></h2><div class="sidebar-elems"><ul class="block"><li class="version">Version 0.1.0</li><li><a id="all-types" href="all.html">All Items</a></li></ul><section><ul class="block"><li><a href="#modules">Modules</a></li></ul></section></div></nav><main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1 class="fqn">Crate <a class="mod" href="#">xadrez</a><button id="copy-path" onclick="copy_path(this)" title="Copy item path to clipboard"><img src="../clipboard.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><a class="srclink" href="../src/xadrez/lib.rs.html#1-125">source</a> · <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class="inner">&#x2212;</span>]</a></span></div><details class="rustdoc-toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><h2 id="xadrez"><a href="#xadrez">Xadrez</a></h2>
+<p>Xadrez is a Rust library for working with chess games. It provides
+functionality for parsing FEN strings, generating legal moves, searching for
+the best possible moves, and evaluating the position of the board.</p>
+<h2 id="features"><a href="#features">Features</a></h2>
+<ul>
+<li>Parsing FEN strings into chess positions</li>
+<li>Generating legal moves for a given chess position</li>
+<li>Searching for the best possible move using different algorithms</li>
+<li>Evaluating the position of the board using different metrics</li>
+<li>Supports all standard chess rules, including en passant, castling, and
+pawn promotion</li>
+<li>Written entirely in Rust, providing a safe and efficient implementation</li>
+<li>Well-documented API and easy-to-use interface</li>
+</ul>
+<h2 id="getting-started"><a href="#getting-started">Getting Started</a></h2>
+<p>To use Xadrez in your Rust project, simply add the following to your
+Cargo.toml file:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code>[dependencies]
+xadrez = { git = <span class="string">&quot;https://github.com/jovialen/xadrez&quot; </span>}</code></pre></div>
+<p>Then, import the library in your code using:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>xadrez::prelude::<span class="kw-2">*</span>;</code></pre></div>
+<p>Example Usage</p>
+<p>Here’s an example of using Xadrez to generate all legal moves for a given
+position:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>xadrez::prelude::<span class="kw-2">*</span>;
+
+<span class="kw">let </span>chessboard = Chessboard::default();
+<span class="kw">let </span>moves = position.moves();
+
+<span class="kw">for </span>mv <span class="kw">in </span>moves {
+    <span class="macro">println!</span>(<span class="string">&quot;{}&quot;</span>, mv);
+}</code></pre></div>
+<p>This will output the following legal moves:</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code>a2a3
+a2a4
+b2b3
+b2b4
+c2c3
+c2c4
+d2d3
+d2d4
+e2e3
+e2e4
+f2f3
+f2f4
+g2g3
+g2g4
+h2h3
+h2h4
+b1a3
+b1c3
+f1g3
+f1h3</code></pre></div>
+<h2 id="license"><a href="#license">License</a></h2>
+<p>Xadrez is licensed under the Apache-v2.0 License.</p>
+</div></details><h2 id="modules" class="small-section-header"><a href="#modules">Modules</a></h2><div class="item-table"><div class="item-row"><div class="item-left module-item"><a class="mod" href="board/index.html" title="xadrez::board mod">board</a></div><div class="item-right docblock-short">Chessboard structures.</div></div><div class="item-row"><div class="item-left module-item"><a class="mod" href="builder/index.html" title="xadrez::builder mod">builder</a></div><div class="item-right docblock-short">Chessboard Builder.</div></div><div class="item-row"><div class="item-left module-item"><a class="mod" href="error/index.html" title="xadrez::error mod">error</a></div><div class="item-right docblock-short">Error types of the chess engine.</div></div><div class="item-row"><div class="item-left module-item"><a class="mod" href="evaluation/index.html" title="xadrez::evaluation mod">evaluation</a></div><div class="item-right docblock-short">Evaluation of the board.</div></div><div class="item-row"><div class="item-left module-item"><a class="mod" href="fen/index.html" title="xadrez::fen mod">fen</a></div><div class="item-right docblock-short">FEN structures.</div></div><div class="item-row"><div class="item-left module-item"><a class="mod" href="move/index.html" title="xadrez::move mod">move</a></div><div class="item-right docblock-short">Chess move structures.</div></div><div class="item-row"><div class="item-left module-item"><a class="mod" href="piece/index.html" title="xadrez::piece mod">piece</a></div><div class="item-right docblock-short">Chess piece structures.</div></div><div class="item-row"><div class="item-left module-item"><a class="mod" href="prelude/index.html" title="xadrez::prelude mod">prelude</a></div><div class="item-right docblock-short">The Xadrez prelude module provides a convenient way to bring common Xadrez
+types and traits into scope. It re-exports the most commonly used items from
+the library modules.</div></div><div class="item-row"><div class="item-left module-item"><a class="mod" href="search/index.html" title="xadrez::search mod">search</a></div><div class="item-right docblock-short">Move searching.</div></div><div class="item-row"><div class="item-left module-item"><a class="mod" href="square/index.html" title="xadrez::square mod">square</a></div><div class="item-right docblock-short">Chessboard squares.</div></div></div></section></div></main><div id="rustdoc-vars" data-root-path="../" data-current-crate="xadrez" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0 (69f9c33d7 2022-12-12)" ></div></body></html>
