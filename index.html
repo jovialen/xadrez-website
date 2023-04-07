@@ -5,21 +5,26 @@
 		<link rel="icon" href="/xadrez-website/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
-		<link href="/xadrez-website/_app/immutable/assets/_layout.d98ea4eb.css" rel="stylesheet">
+		<link href="/xadrez-website/_app/immutable/assets/_layout.8f960ee7.css" rel="stylesheet">
 		<link href="/xadrez-website/_app/immutable/assets/secondary-icon.e1d758da.css" rel="stylesheet">
-		<link href="/xadrez-website/_app/immutable/assets/_page.cd68c26e.css" rel="stylesheet">
-		<link rel="modulepreload" href="/xadrez-website/_app/immutable/entry/start.c0f95a45.js">
-		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/index.5750f8eb.js">
-		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/singletons.de7e4f54.js">
-		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/index.c228e1fe.js">
-		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/paths.95d3b69b.js">
-		<link rel="modulepreload" href="/xadrez-website/_app/immutable/entry/app.6d3c6a2a.js">
-		<link rel="modulepreload" href="/xadrez-website/_app/immutable/entry/_layout.svelte.2cd9aaf0.js">
-		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/stores.adeda193.js">
-		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/secondary-icon.fcdf70a7.js">
+		<link href="/xadrez-website/_app/immutable/assets/_page.250eef92.css" rel="stylesheet">
+		<link href="/xadrez-website/_app/immutable/assets/chessboard.37f19800.css" rel="stylesheet">
+		<link rel="modulepreload" href="/xadrez-website/_app/immutable/entry/start.4823a218.js">
+		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/index.70a37df6.js">
+		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/singletons.baaefcf0.js">
+		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/index.cb5b246f.js">
+		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/paths.eb436e95.js">
+		<link rel="modulepreload" href="/xadrez-website/_app/immutable/entry/app.4e4a2c0a.js">
+		<link rel="modulepreload" href="/xadrez-website/_app/immutable/entry/_layout.svelte.9ba77742.js">
+		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/stores.9af6be9d.js">
+		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/index.c6b29a24.js">
+		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/index.40b40403.js">
+		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/internal-link.5c64cb98.js">
+		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/secondary-icon.80b7f843.js">
 		<link rel="modulepreload" href="/xadrez-website/_app/immutable/entry/_layout.js.984db11e.js">
 		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/_layout.da46b06b.js">
-		<link rel="modulepreload" href="/xadrez-website/_app/immutable/entry/_page.svelte.308e289a.js"><title>Xadrez - Play</title><!-- HEAD_svelte-1igowiq_START --><!-- HEAD_svelte-1igowiq_END -->
+		<link rel="modulepreload" href="/xadrez-website/_app/immutable/entry/_page.svelte.b4139f39.js">
+		<link rel="modulepreload" href="/xadrez-website/_app/immutable/chunks/chessboard.999a51fb.js"><title>Xadrez - Play</title><!-- HEAD_svelte-1igowiq_START --><!-- HEAD_svelte-1igowiq_END -->
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">
@@ -29,9 +34,9 @@
 
 <header class="container mx-auto bg-white flex flex-wrap justify-between px-2 sm:px-4 py-2.5 relative"><div class="place-self-center"><a href="/xadrez-website/" class="flex"><i class="fa-solid fa-chess-knight text-3xl sm:text-4xl text-blue-700"></i>
 			<h1 class="ml-2 text-xl font-semibold">Xadrez</h1></a></div>
-	<div class="place-self-center flex md:order-2"><a href="https://github.com/jovialen/xadrez" target="_blank"><button class="flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors"><div class="flex gap-2"><div class="place-self-center"><i class="fa-brands fa-github-alt text-base text-white"></i></div>
+	<div class="place-self-center flex md:order-2"><a href="https://github.com/jovialen/xadrez" target="_blank"><button class="bg-blue-700 hover:bg-blue-800 text-white  flex focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors"><div class="flex gap-2"><div class="place-self-center"><i class="fa-brands fa-github-alt text-base text-white"></i></div>
 		On GitHub</div></button></a>
-		<div class="md:hidden ml-2"><button class="flex py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 transition-colors"><div class="flex gap-2"><div class="place-self-center"><i class="fa-solid fa-bars-staggered text-base text-inherit"></i></div>
+		<div class="md:hidden ml-2"><button class="bg-white hover:bg-gray-100 text-gray-900 hover:text-blue-700 border border-gray-200 flex focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors"><div class="flex gap-2"><div class="place-self-center"><i class="fa-solid fa-bars-staggered text-base text-inherit"></i></div>
 		</div></button></div></div>
 	<div class="place-self-center w-full md:w-auto md:order-1 md:block hidden"><nav class="items-center justify-between md:flex"><ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white"><li><a href="/xadrez-website/" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 transition-colors">Home</a></li>
 		<li><a href="/xadrez-website/play" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 transition-colors">Play</a></li>
@@ -41,24 +46,26 @@
 			<p>A slightly better chess player than its creator.</p></div>
 </div></section>
 
-<section class="my-2 px-4 md:px-2"><div class="container mx-auto flex flex-col md:flex-row justify-center gap-2 items-center"><a href="/xadrez-website/play" class=""><button class="flex py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 transition-colors"><div class="flex gap-2"><div class="place-self-center"><i class="fa-solid fa-chess text-base text-inherit"></i></div>
+<section class="my-2 px-4 md:px-2"><div class="container mx-auto flex flex-col md:flex-row justify-center gap-2 items-center"><a href="/xadrez-website/play" class=""><button class="bg-white hover:bg-gray-100 text-gray-900 hover:text-blue-700 border border-gray-200 flex focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors"><div class="flex gap-2"><div class="place-self-center"><i class="fa-solid fa-chess text-base text-inherit"></i></div>
 		Challange me</div></button></a>
 		or
-		<a href="/xadrez-website/analyze" class=""><button class="flex py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 transition-colors"><div class="flex gap-2"><div class="place-self-center"><i class="fa-solid fa-brain text-base text-inherit"></i></div>
+		<a href="/xadrez-website/analyze" class=""><button class="bg-white hover:bg-gray-100 text-gray-900 hover:text-blue-700 border border-gray-200 flex focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors"><div class="flex gap-2"><div class="place-self-center"><i class="fa-solid fa-brain text-base text-inherit"></i></div>
 		See how I think</div></button></a></div></section>
 
-<section class="px-4 md:px-2"><div class="container mx-auto"><div class="w-full my-4 md:w-fit"><h1 class="text-lg font-bold text-center"><div slot="header">What am I?</div></h1></div>
-	<div class="flex flex-col md:flex-row justify-center items-center gap-4"><p class="text-lg max-w-sm md:max-w-xl"><div slot="info">I am a chess engine. That means that I can find all legal moves on a chessboard, evaluate how
+<section class="px-4 md:px-2"><div class="container mx-auto"><div class="w-full md:w-[130ch] md:max-w-full mx-auto"><div class="w-fit mx-auto md:mx-0 py-4"><h1 class="text-xl font-bold text-center"><div slot="header">What am I?</div></h1></div>
+
+		<div class="max-w-full flex gap-4 flex-col md:flex-row"><div class="w-full w-full md:w-1/2 my-auto"><div slot="info">I am a chess engine. That means that I can find all legal moves on a chessboard, evaluate how
 			good positions on the board are, and find what I think are the best moves. You can play
 			against me here in the browser, or have me help you with a game by seeing how I think. You can
 			even use me in your own projects!
-		</div></p>
-		<div slot="compliment" class="w-full max-w-sm md:w-96">
+		</div></div>
+			<div class="w-full md:w-1/2"><div class="w-full mx-auto"><div slot="compliment" class="w-full mx-auto md:w-96">
 
-<div id="uid-1"></div></div></div></div></section>
+<div id="uid-2" class="h-full"></div></div></div></div></div></div></div></section>
 
-<section class="px-4 md:px-2"><div class="container mx-auto"><div class="w-full my-4 md:w-fit"><h1 class="text-lg font-bold text-center"><div slot="header">How do I work?</div></h1></div>
-	<div class="flex flex-col md:flex-row justify-center items-center gap-4 md:flex-row-reverse"><p class="text-lg max-w-sm md:max-w-xl"><div slot="info">I find the best moves by using an algorithm called <b>negamax alpha-beta search</b>. By making
+<section class="px-4 md:px-2"><div class="container mx-auto"><div class="w-full md:w-[130ch] md:max-w-full mx-auto"><div class="w-fit mx-auto md:mx-0 py-4"><h1 class="text-xl font-bold text-center"><div slot="header">How do I work?</div></h1></div>
+
+		<div class="max-w-full flex gap-4 flex-col md:flex-row md:flex-row-reverse"><div class="w-full w-full md:w-1/2 my-auto"><div slot="info">I find the best moves by using an algorithm called <b>negamax alpha-beta search</b>. By making
 			every possible move from the current position, I can evaluate all the positions one move into
 			the future, and find the best one. Then, I make every possible move after the first one, and
 			find the best possible position two moves into the future. I continue to do this, looking as
@@ -66,8 +73,8 @@
 			position for me. Sounds complicated? The code
 			<span class="hidden md:inline">to the left</span>
 			<span class="inline md:hidden">below</span> is all the code for it!
-		</div></p>
-		<div slot="compliment" class="w-full overflow-hidden rounded-lg md:w-auto md:min-w-[24rem]">
+		</div></div>
+			<div class="w-full md:w-1/2"><div class="w-full mx-auto"><div slot="compliment" class="w-full overflow-hidden rounded-lg md:w-auto md:min-w-[24rem]">
   <pre data-language="javascript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">function</span> <span class="hljs-title function_">negaMax</span>(<span class="hljs-params">chessboard, depth</span>) {
 	<span class="hljs-keyword">if</span> (depth === <span class="hljs-number">0</span>) {
 		<span class="hljs-keyword">return</span> evaluate(chessboard);
@@ -87,21 +94,38 @@
 
 	<span class="hljs-keyword">return</span> max;
 }<!-- HTML_TAG_END --></code></pre>
-</div></div></div></section>
+</div></div></div></div></div></div></section>
 
-<section class="px-4 md:px-2 py-4"><div class="container mx-auto"><div class="w-full my-4 md:w-fit"><h1 class="text-lg font-bold text-center"><div slot="header">How can you use me?</div></h1></div>
-	<div class="flex flex-col md:flex-row justify-center items-center gap-4"><p class="text-lg max-w-sm md:max-w-xl"><div slot="info">To use me yourself, go to my GitHub repository, download me, and add me to your project. You
+<section class="px-4 md:px-2 py-4"><div class="container mx-auto"><div class="w-full md:w-[130ch] md:max-w-full mx-auto"><div class="w-fit mx-auto md:mx-0 py-4"><h1 class="text-xl font-bold text-center"><div slot="header">How can you use me?</div></h1></div>
+
+		<div class="max-w-full flex gap-4 flex-col md:flex-row"><div class="w-full w-full md:w-1/2 my-auto"><div slot="info">To use me yourself, go to my GitHub repository, download me, and add me to your project. You
 			can see an example on how to use me in code <span class="hidden md:inline">to the right</span>
-			<span class="inline md:hidden">below</span></div></p>
-		<div slot="compliment" class="w-full overflow-hidden rounded-lg md:w-auto md:min-w-[24rem]">
-  <pre data-language="javascript" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Todo!&#x27;</span>)<!-- HTML_TAG_END --></code></pre>
-</div></div></div></section>
+			<span class="inline md:hidden">below</span></div></div>
+			<div class="w-full md:w-1/2"><div class="w-full mx-auto"><div slot="compliment" class="w-full overflow-hidden rounded-lg md:w-auto md:min-w-[24rem]">
+  <pre data-language="rust" class=" svelte-11sh29b"><code class="hljs"><!-- HTML_TAG_START --><span class="hljs-keyword">use</span> xadrez::prelude::*;
+
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
+	<span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">board</span> = Chessboard::<span class="hljs-title function_ invoke__">default</span>();
+
+	<span class="hljs-keyword">let</span> <span class="hljs-variable">evaluation</span> = board.<span class="hljs-title function_ invoke__">evaluate</span>();
+	<span class="hljs-keyword">let</span> <span class="hljs-variable">best_move</span> = board.<span class="hljs-title function_ invoke__">search</span>(SearchLimits::<span class="hljs-title function_ invoke__">from_depth</span>(<span class="hljs-number">2</span>)).<span class="hljs-number">0</span>;
+
+	board.<span class="hljs-title function_ invoke__">make_move</span>(best_move);
+	
+	<span class="hljs-keyword">let</span> <span class="hljs-variable">e7e5</span> = Move::<span class="hljs-title function_ invoke__">from_str</span>(<span class="hljs-string">&quot;e7e5&quot;</span>).<span class="hljs-title function_ invoke__">unwrap</span>();
+	board.<span class="hljs-title function_ invoke__">make_move</span>(e7e5);
+
+	<span class="hljs-keyword">let</span> <span class="hljs-variable">pieces</span> = board.<span class="hljs-title function_ invoke__">pieces</span>();
+
+	<span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{board}: {}&quot;</span>, board.<span class="hljs-title function_ invoke__">game_state</span>());
+}<!-- HTML_TAG_END --></code></pre>
+</div></div></div></div></div></div></section>
 
 
 			
 			<script>
 				{
-					__sveltekit_cyq9h5 = {
+					__sveltekit_114gzne = {
 						env: {},
 						assets: "/xadrez-website",
 						base: "/xadrez-website",
@@ -111,10 +135,10 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("/xadrez-website/_app/immutable/entry/start.c0f95a45.js"),
-						import("/xadrez-website/_app/immutable/entry/app.6d3c6a2a.js")
+						import("/xadrez-website/_app/immutable/entry/start.4823a218.js"),
+						import("/xadrez-website/_app/immutable/entry/app.4e4a2c0a.js")
 					]).then(([kit, app]) => {
-						kit.start(app, __sveltekit_cyq9h5.element, {
+						kit.start(app, __sveltekit_114gzne.element, {
 							node_ids: [0, 2],
 							data,
 							form: null,
