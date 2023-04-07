@@ -11,6 +11,8 @@
 	let position = positionStore();
 	let orientation = writable("white");
 	let message = writable("");
+	let searchTime = writable(3000);
+	let searchDepth = writable(20);
 	let tabs = [
 		{
 			label: 'Game',
@@ -20,6 +22,7 @@
 		{
 			label: 'Settings',
 			content: ChessSettingsTab,
+			props: { searchTime, searchDepth },
 		}
 	];
 
@@ -59,7 +62,7 @@
 			}
 		
 			message.set("Thinking of a move now");
-			position.search(3000).then(m => {
+			position.search($searchTime, $searchDepth).then(m => {
 				position.make_move(m);
 				message.set(`I think ${m} is the best move here!`);
 			})

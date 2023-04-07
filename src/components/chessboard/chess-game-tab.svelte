@@ -10,10 +10,12 @@
 	export let orientation;
 	export let message;
 
+	let searchTime = 3000;
+
 	function playAsBlack() {
 		position.make_move("e2e4");
 		orientation.set("black");
-		message.set("e2e4")
+		message.set("I always like to start with e2e4")
 	}
 
 	function resign() {
@@ -26,7 +28,7 @@
 		if ($orientation[0] === position.side_to_move()) {
 			message.set("Sure! I'll help!")
 			
-			position.search(3000).then(m => {
+			position.search(searchTime).then(m => {
 				position.make_move(m);
 			
 				message.set(`I think that ${m} is a good move for you!`);

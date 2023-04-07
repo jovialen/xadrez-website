@@ -15,7 +15,8 @@
 <input
 	id={id}
 	type="range"
-	{min} {max} {value}
+	{min} {max}
+	bind:value={value}
 	class="w-full h-2 bg-gray-200 rounded-lg appearance-none"
 	class:cursor-pointer={enabled}
 	disabled={!enabled}>
