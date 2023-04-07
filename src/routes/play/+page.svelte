@@ -8,7 +8,7 @@
 
 	title.page('Play');
 
-	let position = positionStore("k7/7P/8/8/8/8/8/7K w - - 0 1");
+	let position = positionStore();
 	let orientation = writable("white");
 	let message = writable("");
 	let tabs = [
