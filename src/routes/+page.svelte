@@ -1,6 +1,7 @@
 <script>
 	import Highlight from 'svelte-highlight/Highlight.svelte';
 	import javascript from 'svelte-highlight/languages/javascript';
+	import rust from 'svelte-highlight/languages/rust';
 	import 'svelte-highlight/styles/github-dark-dimmed.css';
 
 	import { title } from '../stores.js';
@@ -32,7 +33,23 @@
 	return max;
 }`;
 
-	const usage_code = `console.log('Todo!')`;
+	const usage_code = `use xadrez::prelude::*;
+
+fn main() {
+	let mut board = Chessboard::default();
+
+	let evaluation = board.evaluate();
+	let best_move = board.search(SearchLimits::from_depth(2)).0;
+
+	board.make_move(best_move);
+	
+	let e7e5 = Move::from_str("e7e5").unwrap();
+	board.make_move(e7e5);
+
+	let pieces = board.pieces();
+
+	println!("{board}: {}", board.game_state());
+}`;
 </script>
 
 <section>
@@ -65,7 +82,7 @@
 			against me here in the browser, or have me help you with a game by seeing how I think. You can
 			even use me in your own projects!
 		</div>
-		<div slot="compliment" class="w-full max-w-sm md:w-96">
+		<div slot="compliment" class="w-full mx-auto md:w-96">
 			<Chessboard draggable={false} />
 		</div>
 	</InfoSection>
@@ -99,7 +116,7 @@
 			<span class="inline md:hidden">below</span>
 		</div>
 		<div slot="compliment" class="w-full overflow-hidden rounded-lg md:w-auto md:min-w-[24rem]">
-			<Highlight language={javascript} code={usage_code} />
+			<Highlight language={rust} code={usage_code} />
 		</div>
 	</InfoSection>
 </section>
