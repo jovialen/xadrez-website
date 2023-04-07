@@ -4,24 +4,9 @@
 */
 export function wasm_main(): void;
 /**
-* @param {string} fen
 * @returns {any}
 */
-export function evaluate(fen: string): any;
-/**
-* @returns {string}
-*/
-export function startpos(): string;
-/**
-* @param {string} fen
-* @returns {any}
-*/
-export function side_to_move(fen: string): any;
-/**
-* @param {string} fen
-* @returns {any}
-*/
-export function game_state(fen: string): any;
+export function startpos(): any;
 /**
 * @param {string} fen
 * @param {string} m
@@ -35,3 +20,25 @@ export function make_move(fen: string, m: string): any;
 * @returns {any[]}
 */
 export function legal_moves(fen: string, from: any, to: any): any[];
+/**
+* @param {string} fen
+* @returns {any}
+*/
+export function side_to_move(fen: string): any;
+/**
+* @param {string} fen
+* @returns {any}
+*/
+export function evaluate(fen: string): any;
+/**
+* @param {string} fen
+* @returns {any}
+*/
+export function game_state(fen: string): any;
+/**
+* @param {string} fen
+* @param {any} max_time
+* @param {any} max_depth
+* @returns {any}
+*/
+export function search(fen: string, max_time: any, max_depth: any): any;

@@ -1,4 +1,5 @@
 import { writable, get } from 'svelte/store';
+
 import * as Xadrez from './components/xadrez/xadrez.js';
 
 function titleStore() {
@@ -30,7 +31,7 @@ export function positionStore() {
 			let pos = get(position);
 			return pos === Xadrez.startpos();
 		},
-		make_move: (from, to) => {
+		make_move: (from, to = "") => {
 			let oldpos = get(position);
 			let newpos = Xadrez.make_move(oldpos, from + to);
 			if (newpos === null) {
@@ -51,6 +52,13 @@ export function positionStore() {
 		},
 		legal_moves: (from = null, to = null) => {
 			return Xadrez.legal_moves(get(position), from, to);
+		},
+		search: (maxTime = 1000, maxDepth = null) => {
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve(Xadrez.search(get(position), maxTime, maxDepth));
+				}, 500);
+			})
 		}
 	}
 }

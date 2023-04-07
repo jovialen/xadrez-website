@@ -1,5 +1,5 @@
 <script>
-	import { writable } from 'svelte/store';
+	import { writable, get } from 'svelte/store';
 
 	import ChessboardSection from '../../components/sections/chessboard-section.svelte';
 	import ChessGameTab from '../../components/chessboard/chess-game-tab.svelte';
@@ -23,8 +23,12 @@
 		}
 	];
 
-	function movable(piece, orientation) {
+	function movable(piece, o) {
 		if (position.game_state() !== 'Playing') {
+			return false;
+		}
+
+		if (o !== get(orientation)) {
 			return false;
 		}
 
@@ -50,6 +54,10 @@
 	function handleChange() {
 		if ($orientation[0] !== position.side_to_move()) {
 			message.set("Thinking of a move now");
+			position.search(3000).then(m => {
+				position.make_move(m);
+				message.set(`I think ${m} is the best move here!`);
+			})
 		}
 	}
 

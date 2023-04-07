@@ -20,6 +20,18 @@
 		message.set("Want to play again?");
 		orientation.set("white");
 	}
+
+	function help() {
+		if ($orientation[0] === position.side_to_move()) {
+			message.set("Sure! I'll help!")
+			
+			position.search(3000).then(m => {
+				position.make_move(m);
+			
+				message.set(`I think that ${m} is a good move for you!`);
+			});
+		}
+	}
 </script>
 
 <div class='body w-full h-full flex flex-col gap-4'>
@@ -44,7 +56,7 @@
 						Play as Black
 					</IconButton>
 				{/if}
-				<SecondaryIconButton icon='fa-lightbulb'>Help me</SecondaryIconButton>
+				<SecondaryIconButton icon='fa-lightbulb' on:click={help}>Help me</SecondaryIconButton>
 				{#if !position.is_startpos()}
 					<SecondaryIconButton icon='fa-flag' on:click={resign}>Resign</SecondaryIconButton>
 				{/if}
