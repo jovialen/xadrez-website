@@ -1,7 +1,7 @@
 <script>
 	import { title } from '../../stores.js';
 
-	title.page('Notation');
+	title.page('Documentation');
 </script>
 
-<p>Notation page</p>
+<p>Documentation page</p>
