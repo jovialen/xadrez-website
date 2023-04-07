@@ -8,7 +8,6 @@
 	>
 		<li><NavItem href="/">Home</NavItem></li>
 		<li><NavItem href="/play">Play</NavItem></li>
-		<li><NavItem href="/analyze">Analyze</NavItem></li>
 		<li><NavItem href="/notation">Notation</NavItem></li>
 	</ul>
 </nav>

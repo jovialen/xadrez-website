@@ -1,14 +1,22 @@
 <script>
+	import { tweened } from 'svelte/motion';
+	import { cubicOut } from 'svelte/easing';
 	import { slide } from 'svelte/transition';
 
 	import ChatBubble from '../chat-bubble.svelte';
 	import IconButton from '../button/icon-button.svelte';
 	import PrimaryIconButton from '../button/primary-icon.svelte';
 	import SecondaryIconButton from '../button/secondary-icon.svelte';
+	import Slider from '../slider.svelte';
+	import * as Xadrez from '../xadrez/xadrez.js';
 
 	export let position;
 	export let orientation;
 	export let message;
+	let evaluation = tweened(0, { duration: 200, easing: cubicOut });
+	$: {
+		evaluation.set(Xadrez.evaluate($position));
+	}
 
 	let searchTime = 3000;
 
@@ -45,6 +53,17 @@
 		<div class='divider' transition:slide|local />
 	{/if}
 	<div class='grow min-h-[10rem]'>
+		<Slider min={-30} max={30} value={$evaluation} enabled={false}>
+	    Evaluation:
+	  	<span class:white-lead={$evaluation > 0} class:black-lead={$evaluation <= 0} class='px-2 rounded-lg'>
+	      {#if $evaluation > 0}
+	        +
+	      {:else}
+	        -
+	      {/if}
+	  	  {Math.abs($evaluation).toFixed(2)}
+	    </span>
+		</Slider>
 	</div>
 	<div class='divider' />
 	<div class='min-h-fit'>
@@ -82,4 +101,12 @@
 		height: 1px;
 		@apply bg-gray-300;
 	}
+	
+  .white-lead {
+    @apply border border-gray-300;
+  }
+
+  .black-lead {
+    @apply bg-gray-900 text-white;
+  }
 </style>
