@@ -67,8 +67,8 @@ fn main() {
 			><SecondaryIconButton icon="fa-chess">Challange me</SecondaryIconButton></IntLink
 		>
 		or
-		<IntLink href="/analyze"
-			><SecondaryIconButton icon="fa-brain">See how I think</SecondaryIconButton></IntLink
+		<IntLink href="/docs"
+			><SecondaryIconButton icon="fa-book">See how to use me</SecondaryIconButton></IntLink
 		>
 	</div>
 </section>
