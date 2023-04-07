@@ -4,15 +4,16 @@
 	import ChessboardSection from '../../components/sections/chessboard-section.svelte';
 	import ChessGameTab from '../../components/chessboard/chess-game-tab.svelte';
 	import ChessSettingsTab from '../../components/chessboard/chess-settings-tab.svelte';
+	import { persist, createLocalStorage } from "@macfja/svelte-persistent-store";
 	import { title, positionStore } from '../../stores.js';
 
 	title.page('Play');
 
-	let position = positionStore();
-	let orientation = writable("white");
-	let message = writable("");
-	let searchTime = writable(3000);
-	let searchDepth = writable(20);
+	let position = persist(positionStore(), createLocalStorage(), "savegame_fen");
+	let orientation = persist(writable("white"), createLocalStorage(), "savegame_orientation");
+	let message = persist(writable(""), createLocalStorage(), "savegame_message");
+	let searchTime = persist(writable(3000), createLocalStorage(), "savegame_searchTime");
+	let searchDepth = persist(writable(20), createLocalStorage(), "savegame_searchDepth");
 	let tabs = [
 		{
 			label: 'Game',
