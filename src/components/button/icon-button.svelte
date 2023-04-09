@@ -5,9 +5,9 @@
 	export let icon = '';
 	export let origin = 'fa-solid';
 
-	export let bg_color = "bg-blue-700 hover:bg-blue-800";
-	export let text_color = "text-white";
-	export let border = "";
+	export let bg_color = 'bg-blue-700 hover:bg-blue-800';
+	export let text_color = 'text-white';
+	export let border = '';
 </script>
 
 <Button on:click {bg_color} {text_color} {border}>

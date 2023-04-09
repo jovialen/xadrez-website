@@ -8,20 +8,20 @@
 
 	let tabs = [];
 	tabs.push({
-			label: 'Game',
-			content: ChessGameTab,
-		});
+		label: 'Game',
+		content: ChessGameTab
+	});
 	tabs.push({
-			label: 'Settings',
-			content: ChessSettingsTab,
-		});
+		label: 'Settings',
+		content: ChessSettingsTab
+	});
 
 	if (analyze) {
 		tabs.push({
 			label: 'Analyze',
-			content: ChessAnalysisTab,
+			content: ChessAnalysisTab
 		});
 	}
 </script>
 
-<TabView tabs={tabs} />
+<TabView {tabs} />

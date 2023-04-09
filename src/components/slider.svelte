@@ -2,7 +2,7 @@
 	import newUniqueId from 'locally-unique-id-generator';
 
 	let id = newUniqueId();
-	
+
 	export let min = 0;
 	export let max = 10;
 	export let value = 0;
@@ -13,11 +13,12 @@
 	<slot />
 </label>
 <input
-	id={id}
+	{id}
 	type="range"
-	{min} {max}
-	bind:value={value}
+	{min}
+	{max}
+	bind:value
 	class="w-full h-2 bg-gray-200 rounded-lg appearance-none"
 	class:cursor-pointer={enabled}
-	disabled={!enabled}>
-
+	disabled={!enabled}
+/>

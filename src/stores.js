@@ -31,11 +31,11 @@ export function positionStore(startpos = Xadrez.startpos()) {
 			let pos = get(position);
 			return pos === Xadrez.startpos();
 		},
-		make_move: (from, to = "") => {
+		make_move: (from, to = '') => {
 			let oldpos = get(position);
-			let newpos = Xadrez.make_move(oldpos, from + to, "q");
+			let newpos = Xadrez.make_move(oldpos, from + to, 'q');
 			if (newpos === null) {
-				console.log(from + to + " is an illegal move");
+				console.log(from + to + ' is an illegal move');
 				return false;
 			}
 			position.set(newpos);
@@ -58,9 +58,9 @@ export function positionStore(startpos = Xadrez.startpos()) {
 				setTimeout(() => {
 					resolve(Xadrez.search(get(position), maxTime, maxDepth));
 				}, 500);
-			})
+			});
 		}
-	}
+	};
 }
 
 export const title = titleStore();

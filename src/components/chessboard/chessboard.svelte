@@ -11,10 +11,12 @@
 
 	export let position = writable(startpos());
 	export let draggable = false;
-	export let orientation = "white";
+	export let orientation = 'white';
 	export let sparePieces = false;
 	export let dropOffBoard = 'snapback';
-	export let movable = (piece, orientation) => { return true };
+	export let movable = (piece, orientation) => {
+		return true;
+	};
 	export let onDrop = (from, to) => {};
 
 	const dispatch = createEventDispatcher();
@@ -25,7 +27,7 @@
 	function handleResize() {
 		board.resize();
 	}
-	
+
 	onMount(() => {
 		board = Chessboard(id, {
 			position: $position,

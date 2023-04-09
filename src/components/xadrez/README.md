@@ -34,7 +34,7 @@ fn main() {
 	chessboard.make_move(Move::from_str("e2e4"));
 
 	println!("{}", chessboard.evaluate());
-	
+
 	let best_move = MoveSearcher::new(&chessbboard)
 		.max_depth(10)
 		.max_time(Duration::from_secs(5))
