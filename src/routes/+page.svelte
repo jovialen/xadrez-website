@@ -83,7 +83,9 @@ fn main() {
 			even use me in your own projects!
 		</div>
 		<div slot="compliment" class="w-full mx-auto md:w-96">
-			<Chessboard draggable={false} />
+			<IntLink href="/play">
+				<Chessboard draggable={false} />
+			</IntLink>
 		</div>
 	</InfoSection>
 </section>

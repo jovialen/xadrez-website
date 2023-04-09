@@ -8,6 +8,7 @@
 	import PrimaryIconButton from '../button/primary-icon.svelte';
 	import SecondaryIconButton from '../button/secondary-icon.svelte';
 	import Slider from '../slider.svelte';
+	import Input from '../input.svelte';
 	import * as Xadrez from '../xadrez/xadrez.js';
 
 	export let position;
@@ -62,6 +63,9 @@
 	  	  {Math.abs($evaluation).toFixed(2)}
 	    </span>
 		</Slider>
+		<Input value={$position} readonly={true}>
+			FEN Position:
+		</Input>
 	</div>
 	<div class='divider' />
 	<div class='min-h-fit'>
