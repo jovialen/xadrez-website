@@ -56,12 +56,17 @@
 	}
 
 	function handleChange() {
-		if ($orientation[0] !== position.side_to_move()) {
-			if (position.game_state() !== "Playing") {
-				message.set(position.game_state());
-				return;
+		if (position.game_state() !== "Playing") {
+			
+			if (position.game_state() === "Checkmate" && $orientation[0] !== position.side_to_move()) {
+				message.set("Congratulations! You win, and I accept my loss. Can I get a rematch?");
+			} else {
+				message.set(position.game_state() + "!");
 			}
-		
+			return;
+		}
+			
+		if ($orientation[0] !== position.side_to_move()) {
 			message.set("Thinking of a move now");
 			position.search($searchTime, $searchDepth).then(m => {
 				position.make_move(m);

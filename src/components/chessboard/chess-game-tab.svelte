@@ -37,8 +37,6 @@
 			message.set("Sure! I'll help!")
 			
 			position.search(searchTime).then(m => {
-				position.make_move(m);
-			
 				message.set(`I think that ${m} is a good move for you!`);
 			});
 		}
