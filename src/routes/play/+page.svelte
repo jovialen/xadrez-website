@@ -53,6 +53,14 @@
 		}
 
 		message.set(from + to);
+		
+		if ($orientation[0] !== position.side_to_move()) {
+			message.set("Thinking of a move now");
+			position.search($searchTime, $searchDepth).then(m => {
+				position.make_move(m);
+				message.set(`I think ${m} is the best move here!`);
+			})
+		}
 	}
 
 	function handleChange() {
@@ -64,14 +72,6 @@
 				message.set(position.game_state() + "!");
 			}
 			return;
-		}
-			
-		if ($orientation[0] !== position.side_to_move()) {
-			message.set("Thinking of a move now");
-			position.search($searchTime, $searchDepth).then(m => {
-				position.make_move(m);
-				message.set(`I think ${m} is the best move here!`);
-			})
 		}
 	}
 
