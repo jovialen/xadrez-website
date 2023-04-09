@@ -12,7 +12,7 @@ To install and run Xadrez, follow these steps:
 - Navigate to the project directory in your terminal.
 - Run `npm install` to install the project's dependencies.
 - Run `npm run dev` to start the development server.
-- Open your web browser and navigate to `http://localhost:5000` to access the Xadrez website.
+- Open your web browser and navigate to `http://localhost:5173/xadrez-website` to access the Xadrez website.
 
 ## Features
 
