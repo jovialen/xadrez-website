@@ -11,7 +11,7 @@
 		</div>
 
 		<div class="max-w-full flex gap-4 flex-col md:flex-row" class:md:flex-row-reverse={reverse}>
-			<div class="w-full w-full md:w-1/2 my-auto">
+			<div class="w-full w-full md:w-1/2 my-auto text-lg">
 				<slot name="info" />
 			</div>
 			<div class="w-full md:w-1/2">
